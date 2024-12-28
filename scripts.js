@@ -4,6 +4,21 @@ function createNewGame() {
   
     // Redirigir a otra página, pasando el código como parámetro en la URL
     window.location.href = `bank.html?codigo=${codigo}`;
+    
+    const nuevaPartida = {
+      nombre: nombrePartida,
+      codigo: codigo,
+      creadaEn: new Date().toISOString()
+    };
+  
+    database.ref('partidas').push(nuevaPartida)
+      .then(() => {
+        alert(`Partida creada con éxito. Código: ${codigo}`);
+      })
+      .catch((error) => {
+        console.error('Error al guardar en Firebase:', error);
+        alert('Hubo un error al crear la partida.');
+      });
   }
 
 // Referencias a los botones
