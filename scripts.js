@@ -1,5 +1,3 @@
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
-const database = getDatabase();
 
 function createNewGame(nombre) {
     // Generar número random de 4 dígitos (1000 a 9999)
