@@ -1,9 +1,6 @@
 function createNewGame() {
     // Generar número random de 4 dígitos (1000 a 9999)
     const codigo = Math.floor(1000 + Math.random() * 9000);
-  
-    // Redirigir a otra página, pasando el código como parámetro en la URL
-    window.location.href = `bank.html?codigo=${codigo}`;
     
     const nuevaPartida = {
       nombre: nombrePartida,
@@ -19,6 +16,10 @@ function createNewGame() {
         console.error('Error al guardar en Firebase:', error);
         alert('Hubo un error al crear la partida.');
       });
+  
+    // Redirigir a otra página, pasando el código como parámetro en la URL
+    window.location.href = `bank.html?codigo=${codigo}`;
+
   }
 
 // Referencias a los botones
