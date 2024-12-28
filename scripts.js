@@ -1,3 +1,6 @@
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+const database = getDatabase();
+
 function createNewGame(nombre) {
     // Generar número random de 4 dígitos (1000 a 9999)
     const codigo = Math.floor(1000 + Math.random() * 9000);
@@ -6,7 +9,7 @@ function createNewGame(nombre) {
       nombre: nombre,
       codigo: codigo,
     };
-    
+
     database.ref('partidas').push(nuevaPartida)
       .then(() => {
         alert(`Partida creada con éxito. Código: ${codigo}`);

@@ -18,4 +18,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Obtener la referencia a la base de datos
-const db = getDatabase(app);
+const database = getDatabase(app);
