@@ -1,13 +1,12 @@
-function createNewGame() {
+function createNewGame(nombre) {
     // Generar número random de 4 dígitos (1000 a 9999)
     const codigo = Math.floor(1000 + Math.random() * 9000);
-    
+
     const nuevaPartida = {
-      nombre: nombrePartida,
+      nombre: nombre,
       codigo: codigo,
-      creadaEn: new Date().toISOString()
     };
-  
+    
     database.ref('partidas').push(nuevaPartida)
       .then(() => {
         alert(`Partida creada con éxito. Código: ${codigo}`);
@@ -34,7 +33,7 @@ btnCrear.addEventListener('click', () => {
     alert('Por favor, ingresa un nombre para la partida.');
     return;
   }
-  createNewGame()
+  createNewGame(nombrePartida)
 });
 
 // Unirse a partida
