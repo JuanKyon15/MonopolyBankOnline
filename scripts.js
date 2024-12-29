@@ -9,7 +9,7 @@ function createNewGame(nombre) {
       codigo: codigo,
     };
 
-    database.ref('partidas').push(nuevaPartida)
+    .ref('partidas').push(nuevaPartida)
       .then(() => {
         alert(`Partida creada con éxito. Código: ${codigo}`);
       })
