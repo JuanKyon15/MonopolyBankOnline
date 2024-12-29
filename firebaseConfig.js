@@ -1,6 +1,8 @@
-// Importar las funciones necesarias de Firebase SDK
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+import "firebase/firestore";
+
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -14,8 +16,7 @@ const firebaseConfig = {
   measurementId: "G-H5P3TN9YMR"
 };
 
-// Inicializar Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Obtener la referencia a la base de datos
-const database = getDatabase(app);
+// Initialize Cloud Firestore and get a reference to the service
+const database = getFirestore(app);

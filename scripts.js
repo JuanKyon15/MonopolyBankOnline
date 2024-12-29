@@ -1,3 +1,4 @@
+import { ref } from "firebase/firestore";
 
 function createNewGame(nombre) {
     // Generar número random de 4 dígitos (1000 a 9999)
